@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js" defer></script>
+    <style>
+        .video-card:hover .video-duration {
+            opacity: 0;
+        }
+        .video-card:hover .play-icon {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="flex items-center justify-between px-4 py-2">
+            <div class="flex items-center">
+                <i class="fas fa-bars text-gray-600 mr-4 text-xl"></i>
+                <div class="flex items-center cursor-pointer" data-header-logo>
+                    <i class="fab fa-youtube text-red-600 text-3xl mr-1"></i>
+                    <span class="font-bold text-xl">YouTube</span>
+                </div>
+            </div>
+            
+            <div class="flex-1 max-w-2xl mx-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search" 
+                           class="w-full border border-gray-300 rounded-l-full py-2 px-4 focus:outline-none focus:border-blue-500">
+                    <button class="bg-gray-100 border border-l-0 border-gray-300 rounded-r-full px-5 py-2">
+                        <i class="fas fa-search text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <i class="fas fa-video text-gray-600 text-xl"></i>
+                <i class="fas fa-bell text-gray-600 text-xl"></i>
+                <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                    <span class="text-sm font-medium">U</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-16 md:w-64 bg-white h-screen sticky top-14">
+            <nav class="py-4">
+                <div class="px-2 py-3 flex flex-col md:flex-row md:items-center text-gray-700 hover:bg-gray-100 rounded-lg">
+                    <i class="fas fa-home mx-auto md:mr-4 text-xl md:text-base"></i>
+                    <span class="hidden md:block">Home</span>
+                </div>
+                <!-- More nav items would go here -->
+            </nav>
+        </aside>
+
+        <!-- Video Grid -->
+        <main class="flex-1 p-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Video Card 1 -->
+                <div class="video-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer" data-video-card>
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" 
+                             alt="Video thumbnail" class="w-full h-40 object-cover">
+                        <span class="video-duration absolute bottom-2 right-2 bg-black text-white text-xs px-1 rounded">10:30</span>
+                        <i class="play-icon fas fa-play absolute inset-0 m-auto text-white text-2xl opacity-0 transition-opacity"></i>
+                    </div>
+                    <div class="p-3">
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-3">
+                                <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" 
+                                     alt="Channel icon" class="w-9 h-9 rounded-full">
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-sm line-clamp-2">How to build a YouTube clone with Tailwind CSS</h3>
+                                <p class="text-gray-500 text-xs mt-1">Web Dev Simplified</p>
+                                <p class="text-gray-500 text-xs">1.2M views • 2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional video cards would be repeated here -->
+                <!-- Video Card 2 -->
+                <div class="video-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer" data-video-card>
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg" 
+                             alt="Video thumbnail" class="w-full h-40 object-cover">
+                        <span class="video-duration absolute bottom-2 right-2 bg-black text-white text-xs px-1 rounded">5:45</span>
+                        <i class="play-icon fas fa-play absolute inset-0 m-auto text-white text-2xl opacity-0 transition-opacity"></i>
+                    </div>
+                    <div class="p-3">
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-3">
+                                <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg" 
+                                     alt="Channel icon" class="w-9 h-9 rounded-full">
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-sm line-clamp-2">Learn React in 5 Minutes - Beginner's Tutorial</h3>
+                                <p class="text-gray-500 text-xs mt-1">CodeMaster</p>
+                                <p class="text-gray-500 text-xs">850K views • 1 week ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 3 -->
+                <div class="video-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer" data-video-card>
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg" 
+                             alt="Video thumbnail" class="w-full h-40 object-cover">
+                        <span class="video-duration absolute bottom-2 right-2 bg-black text-white text-xs px-1 rounded">15:22</span>
+                        <i class="play-icon fas fa-play absolute inset-0 m-auto text-white text-2xl opacity-0 transition-opacity"></i>
+                    </div>
+                    <div class="p-3">
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-3">
+                                <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg" 
+                                     alt="Channel icon" class="w-9 h-9 rounded-full">
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-sm line-clamp-2">Building a Full Stack App with Next.js and Firebase</h3>
+                                <p class="text-gray-500 text-xs mt-1">DevExplained</p>
+                                <p class="text-gray-500 text-xs">2.1M views • 3 weeks ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 4 -->
+                <div class="video-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer" data-video-card>
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg" 
+                             alt="Video thumbnail" class="w-full h-40 object-cover">
+                        <span class="video-duration absolute bottom-2 right-2 bg-black text-white text-xs px-1 rounded">8:15</span>
+                        <i class="play-icon fas fa-play absolute inset-0 m-auto text-white text-2xl opacity-0 transition-opacity"></i>
+                    </div>
+                    <div class="p-3">
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-3">
+                                <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg" 
+                                     alt="Channel icon" class="w-9 h-9 rounded-full">
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-sm line-clamp-2">CSS Grid vs Flexbox - When to Use Which</h3>
+                                <p class="text-gray-500 text-xs mt-1">CSS Wizardry</p>
+                                <p class="text-gray-500 text-xs">1.5M views • 1 month ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
