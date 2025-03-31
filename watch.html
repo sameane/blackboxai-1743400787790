@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watching: How to build a YouTube clone with Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .player-container {
+            aspect-ratio: 16/9;
+        }
+        .comment-avatar {
+            min-width: 40px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="flex items-center justify-between px-4 py-2">
+            <div class="flex items-center">
+                <i class="fas fa-bars text-gray-600 mr-4 text-xl"></i>
+                <div class="flex items-center">
+                    <i class="fab fa-youtube text-red-600 text-3xl mr-1"></i>
+                    <span class="font-bold text-xl">YouTube</span>
+                </div>
+            </div>
+            
+            <div class="flex-1 max-w-2xl mx-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search" 
+                           class="w-full border border-gray-300 rounded-l-full py-2 px-4 focus:outline-none focus:border-blue-500">
+                    <button class="bg-gray-100 border border-l-0 border-gray-300 rounded-r-full px-5 py-2">
+                        <i class="fas fa-search text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <i class="fas fa-video text-gray-600 text-xl"></i>
+                <i class="fas fa-bell text-gray-600 text-xl"></i>
+                <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                    <span class="text-sm font-medium">U</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="flex flex-col lg:flex-row px-4 py-6 max-w-7xl mx-auto">
+        <!-- Video Player Section -->
+        <main class="w-full lg:w-3/4 lg:pr-8">
+            <div class="player-container bg-black rounded-lg overflow-hidden">
+                <video controls class="w-full h-full">
+                    <source src="https://cdn.pexels.com/videos/3561339/video-3561339.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- Video Info -->
+            <div class="mt-4">
+                <h1 class="text-xl font-bold">How to build a YouTube clone with Tailwind CSS</h1>
+                <div class="flex items-center justify-between mt-2">
+                    <div class="flex items-center">
+                        <span class="text-gray-600 text-sm">1.2M views • 2 days ago</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button class="flex items-center space-x-1 text-gray-700">
+                            <i class="far fa-thumbs-up"></i>
+                            <span>125K</span>
+                        </button>
+                        <button class="flex items-center space-x-1 text-gray-700">
+                            <i class="far fa-thumbs-down"></i>
+                            <span>1.2K</span>
+                        </button>
+                        <button class="flex items-center space-x-1 text-gray-700">
+                            <i class="fas fa-share"></i>
+                            <span>Share</span>
+                        </button>
+                        <button class="flex items-center space-x-1 text-gray-700">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Channel Info -->
+            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-200">
+                <div class="flex items-center">
+                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" 
+                         alt="Channel icon" class="w-12 h-12 rounded-full mr-3">
+                    <div>
+                        <h3 class="font-medium">Web Dev Simplified</h3>
+                        <p class="text-gray-600 text-sm">1.45M subscribers</p>
+                    </div>
+                </div>
+                <button class="bg-red-600 text-white px-4 py-2 rounded-full font-medium">
+                    Subscribe
+                </button>
+            </div>
+
+            <!-- Video Description -->
+            <div class="mt-4 p-3 bg-gray-50 rounded-lg">
+                <div class="flex items-center text-sm text-gray-600 mb-2">
+                    <span>12,345 views</span>
+                    <span class="mx-2">•</span>
+                    <span>Premiered on May 15, 2023</span>
+                </div>
+                <p class="text-sm">
+                    In this tutorial, we'll build a YouTube clone using Tailwind CSS and HTML. We'll cover responsive design, 
+                    video cards, navigation, and more. Perfect for beginners looking to improve their frontend skills!
+                </p>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="mt-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-medium">1,234 Comments</h3>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-sort mr-2"></i>
+                        <span>Sort by</span>
+                    </div>
+                </div>
+
+                <!-- Comment Form -->
+                <div class="flex mb-6">
+                    <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg" 
+                         alt="User avatar" class="w-10 h-10 rounded-full mr-3">
+                    <div class="flex-1">
+                        <input type="text" placeholder="Add a comment..." 
+                               class="w-full border-b border-gray-300 pb-1 focus:outline-none focus:border-gray-500">
+                    </div>
+                </div>
+
+                <!-- Comment List -->
+                <div class="space-y-4">
+                    <!-- Comment 1 -->
+                    <div class="flex">
+                        <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg" 
+                             alt="User avatar" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <div class="flex items-center">
+                                <span class="font-medium mr-2">John Doe</span>
+                                <span class="text-gray-500 text-sm">2 days ago</span>
+                            </div>
+                            <p class="mt-1">Great tutorial! Really helped me understand Tailwind better.</p>
+                            <div class="flex items-center mt-2 text-sm text-gray-600">
+                                <i class="far fa-thumbs-up mr-2"></i>
+                                <span class="mr-4">245</span>
+                                <i class="far fa-thumbs-down mr-2"></i>
+                                <span class="mr-4">2</span>
+                                <span class="font-medium">REPLY</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment 2 -->
+                    <div class="flex">
+                        <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg" 
+                             alt="User avatar" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <div class="flex items-center">
+                                <span class="font-medium mr-2">Jane Smith</span>
+                                <span class="text-gray-500 text-sm">1 day ago</span>
+                            </div>
+                            <p class="mt-1">Would love to see a follow-up with React integration!</p>
+                            <div class="flex items-center mt-2 text-sm text-gray-600">
+                                <i class="far fa-thumbs-up mr-2"></i>
+                                <span class="mr-4">189</span>
+                                <i class="far fa-thumbs-down mr-2"></i>
+                                <span class="mr-4">0</span>
+                                <span class="font-medium">REPLY</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Related Videos Sidebar -->
+        <aside class="w-full lg:w-1/4 mt-6 lg:mt-0">
+            <div class="space-y-4">
+                <h3 class="font-medium">Up next</h3>
+                
+                <!-- Related Video 1 -->
+                <div class="flex">
+                <div class="relative flex-shrink-0 mr-3 cursor-pointer" data-video-card>
+                    <img src="https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg" 
+                         alt="Video thumbnail" class="w-40 h-24 object-cover rounded-lg">
+                    <span class="absolute bottom-1 right-1 bg-black text-white text-xs px-1 rounded">5:45</span>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium line-clamp-2">Learn React in 5 Minutes - Beginner's Tutorial</h4>
+                        <p class="text-gray-600 text-xs mt-1">CodeMaster</p>
+                        <p class="text-gray-600 text-xs">850K views • 1 week ago</p>
+                    </div>
+                </div>
+
+                <!-- Related Video 2 -->
+                <div class="flex">
+                <div class="relative flex-shrink-0 mr-3 cursor-pointer" data-video-card>
+                    <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg" 
+                         alt="Video thumbnail" class="w-40 h-24 object-cover rounded-lg">
+                    <span class="absolute bottom-1 right-1 bg-black text-white text-xs px-1 rounded">15:22</span>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium line-clamp-2">Building a Full Stack App with Next.js and Firebase</h4>
+                        <p class="text-gray-600 text-xs mt-1">DevExplained</p>
+                        <p class="text-gray-600 text-xs">2.1M views • 3 weeks ago</p>
+                    </div>
+                </div>
+
+                <!-- More related videos would go here -->
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
