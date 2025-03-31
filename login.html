@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in - YouTube</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js" defer></script>
+    <style>
+        .input-field {
+            transition: all 0.2s;
+        }
+        .input-field:focus {
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 2px rgba(26,115,232,0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-md">
+        <!-- Logo -->
+        <div class="flex justify-center mb-8">
+            <div class="flex items-center cursor-pointer" data-header-logo>
+                <i class="fab fa-youtube text-red-600 text-4xl mr-2"></i>
+                <span class="font-bold text-2xl">YouTube</span>
+            </div>
+        </div>
+
+        <!-- Login Card -->
+        <div class="bg-white rounded-lg shadow-sm p-8">
+            <h1 class="text-2xl font-medium text-center mb-6">Sign in</h1>
+            <p class="text-sm text-gray-600 text-center mb-6">to continue to YouTube</p>
+
+            <!-- Email Input -->
+            <div class="mb-4">
+                <input type="email" placeholder="Email or phone" 
+                       class="input-field w-full border border-gray-300 rounded px-4 py-3 focus:outline-none">
+            </div>
+
+            <!-- Password Input -->
+            <div class="mb-6">
+                <input type="password" placeholder="Password" 
+                       class="input-field w-full border border-gray-300 rounded px-4 py-3 focus:outline-none">
+            </div>
+
+            <!-- Forgot Password Link -->
+            <div class="mb-6">
+                <a href="#" class="text-sm text-blue-600 hover:underline">Forgot password?</a>
+            </div>
+
+            <!-- Sign In Button -->
+            <button class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 mb-4">
+                Next
+            </button>
+
+            <!-- Divider -->
+            <div class="flex items-center my-6">
+                <div class="flex-1 border-t border-gray-300"></div>
+                <span class="px-3 text-gray-500 text-sm">or</span>
+                <div class="flex-1 border-t border-gray-300"></div>
+            </div>
+
+            <!-- Social Login Buttons -->
+            <div class="space-y-3">
+                <button class="w-full flex items-center justify-center border border-gray-300 rounded px-4 py-2 text-sm font-medium hover:bg-gray-50 focus:outline-none">
+                    <i class="fab fa-google text-blue-600 mr-2"></i>
+                    Continue with Google
+                </button>
+                <button class="w-full flex items-center justify-center border border-gray-300 rounded px-4 py-2 text-sm font-medium hover:bg-gray-50 focus:outline-none">
+                    <i class="fab fa-apple text-gray-800 mr-2"></i>
+                    Continue with Apple
+                </button>
+            </div>
+        </div>
+
+        <!-- Sign Up Link -->
+        <div class="mt-6 text-center">
+            <p class="text-sm text-gray-600">
+                Don't have an account? 
+                <a href="#" class="text-blue-600 hover:underline">Sign up</a>
+            </p>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="mt-8 flex justify-center space-x-4 text-xs text-gray-500">
+            <a href="#" class="hover:underline">Terms</a>
+            <a href="#" class="hover:underline">Privacy</a>
+            <a href="#" class="hover:underline">Help</a>
+        </div>
+    </div>
+</body>
+</html>
